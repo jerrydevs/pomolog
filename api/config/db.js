@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
-const config = require('config');
-const dbURI = config.get('mongoURI');
+const mongoose = require('mongoose')
+const config = require('config')
+
+const dbURI = config.get('mongoURI')
 
 const connectToDB = async () => {
   try {
@@ -9,13 +10,13 @@ const connectToDB = async () => {
       useUnifiedTopology: true,
       useCreateIndex: true,
       useFindAndModify: false,
-    });
-    console.log('Connected to MongoDB Server...');
+    })
+    console.log('Connected to MongoDB Server...')
   } catch (err) {
-    console.error(err.message);
+    console.error(err.message)
 
-    process.exit(1);
+    process.exit(1)
   }
-};
+}
 
-module.exports = connectToDB;
+module.exports = connectToDB
